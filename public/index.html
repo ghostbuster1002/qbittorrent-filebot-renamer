@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>qBittorrent FileBot Renamer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>qBittorrent FileBot Renamer</h1>
+            <button id="refreshBtn" class="btn btn-primary">Refresh Torrents</button>
+        </header>
+
+        <main>
+            <div id="loading" class="loading">Loading torrents...</div>
+            
+            <div id="torrentsContainer" class="torrents-container" style="display: none;">
+                <div class="torrents-grid" id="torrentsGrid">
+                    <!-- Torrents will be populated here -->
+                </div>
+            </div>
+
+            <!-- Torrent Details Modal -->
+            <div id="torrentModal" class="modal">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h2 id="modalTitle">Torrent Details</h2>
+                        <span class="close">&times;</span>
+                    </div>
+                    <div class="modal-body">
+                        <div class="torrent-info">
+                            <div class="info-section">
+                                <h3>Information</h3>
+                                <div id="torrentInfo"></div>
+                            </div>
+                            
+                            <div class="info-section">
+                                <h3>Files</h3>
+                                <div id="torrentFiles"></div>
+                            </div>
+                            
+                            <div class="info-section">
+                                <h3>Rename Options</h3>
+                                <div class="rename-controls">
+                                    <button id="tvShowBtn" class="btn btn-secondary">TV Show</button>
+                                    <button id="movieBtn" class="btn btn-secondary">Movie</button>
+                                </div>
+                                <div id="suggestions" class="suggestions"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
