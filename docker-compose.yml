@@ -6,8 +6,6 @@ services:
     container_name: qbt-filebot-renamer
     ports:
       - "${HOST_PORT:-3000}:${PORT:-3000}"
-    environment:
-      - NODE_ENV=production
     env_file:
       - .env
     volumes:
