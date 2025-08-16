@@ -3,6 +3,11 @@ FROM node:20-bookworm-slim
 # Create non-root user
 RUN groupadd -r appuser && useradd -r -g appuser appuser
 
+# Enable non-free repositories for unrar
+RUN echo "deb http://deb.debian.org/debian bookworm main non-free-firmware" > /etc/apt/sources.list.d/non-free.list \
+    && echo "deb http://deb.debian.org/debian bookworm-updates main non-free-firmware" >> /etc/apt/sources.list.d/non-free.list \
+    && echo "deb http://deb.debian.org/debian-security bookworm-security main non-free-firmware" >> /etc/apt/sources.list.d/non-free.list
+
 # Install security updates and FileBot
 RUN apt-get update && apt-get upgrade -y && apt-get install -y \
     dirmngr \
